@@ -10,9 +10,12 @@ import { orange, red } from '@material-ui/core/colors';
 import { Provider } from 'react-redux';
 import store from './store'
 
-import Navbar from './components/layout/Navbar';
-import AudioBar from './components/audio-bar/AudioBar'
-import Landing from './components/layout/Landing';
+// import Navbar from './components/layout/Navbar';
+import Navbar from './components/navbar';
+import Landing from './components/landing';
+
+import AudioBar from './components/audio-bar/AudioBar';
+// import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import PrivateRoute from "./components/private-route/PrivateRoute";
