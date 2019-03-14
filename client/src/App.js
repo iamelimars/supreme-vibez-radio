@@ -4,11 +4,14 @@ import './App.css';
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { orange, red } from '@material-ui/core/colors';
 
 import { Provider } from 'react-redux';
 import store from './store'
 
 import Navbar from './components/layout/Navbar';
+import AudioBar from './components/audio-bar/AudioBar'
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
@@ -30,7 +33,7 @@ if (localStorage.jwtToken) {
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
 
-// Check for expired token
+  // Check for expired token
   const currentTime = Date.now() / 1000; // to get in milliseconds
   if (decoded.exp < currentTime) {
     // Logout user
@@ -41,23 +44,34 @@ if (localStorage.jwtToken) {
   }
 }
 
+const theme = createMuiTheme({
+  palette: {
+    primary: orange,
+    secondary: red,
+  },
+});
+
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router>
-          <div className="App">
-            <Navbar />
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/forgot_password" component={ForgotPassword}/>
-            <Route exact path="/reset_password" component={ResetPassword}/>
-            <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            </Switch>
-          </div>
-        </Router>
+        <MuiThemeProvider theme={theme}>
+          <Router>
+            <div className="App">
+              <Navbar />
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/forgot_password" component={ForgotPassword} />
+              <Route exact path="/reset_password" component={ResetPassword} />
+              <Switch>
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              </Switch>
+              <AudioBar />
+            </div>
+          </Router>
+        </MuiThemeProvider>
+
       </Provider>
     );
   }
