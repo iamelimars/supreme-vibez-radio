@@ -38,10 +38,10 @@ const Hero = (props) => {
                         justify="center"
                         direction="column"
                         style={{ height: '100%', padding: 20 }}>
-                        <Typography style={{color: 'white', fontSize: '4rem', fontWeight: '800'}} variant="h4" align="left">
+                        <Typography style={{color: 'white', fontSize: '3.5rem', fontWeight: '800'}} variant="h4" align="left">
                             Supreme Vibez Radio
                         </Typography>
-                        <Typography style={{color: 'orange', fontSize: '2rem', fontWeight: '700'}} variant="h6" align="left">
+                        <Typography style={{color: 'orange', fontSize: '1.4rem', fontWeight: '700'}} variant="h6" align="left">
                             24/7 Online Radio
                         </Typography>
                         <Typography style={{color: 'white', fontSize: '1rem', fontWeight: '700'}} variant="p" align="left">
