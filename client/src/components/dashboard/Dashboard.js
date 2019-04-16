@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 
-// import Chat from './Chat';
+import Chat from './Chat';
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -39,7 +39,7 @@ return (
             </button>
           </div>
           <div className="col s4">
-            {/* <Chat username={user.username}/> */}
+            <Chat username={user.username}/>
           </div>
         </div>
       </div>

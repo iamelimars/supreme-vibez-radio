@@ -2,13 +2,24 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import HeroImg from '../../assets/hero-2.jpg';
 import Hero from './Hero'
+import io from 'socket.io-client'
 
-
-const styles = {
-    
-}
 
 class Landing extends Component {
+    
+    constructor(props) {
+        super(props);
+
+        this.socket = io('localhost:3003')
+
+        this.socket.emit('news', { news: 'test news' })
+
+        this.socket.on('news', data => {
+            console.log(data);
+            
+        })
+    }
+
     render() {
         return (
             <div style={{ height: '75vh' }}
