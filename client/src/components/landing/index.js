@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import JoinSection from './JoinSection';
 import Hero from './Hero';
+import SocialSection from './SocialSection';
 import io from 'socket.io-client';
 
 
@@ -21,6 +22,7 @@ class Landing extends Component {
                     <div className="col s12 center-align">
                         <Hero />
                         <JoinSection />
+                        <SocialSection />
                         <br/>
                     </div>
                 </div>

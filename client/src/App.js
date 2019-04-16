@@ -50,7 +50,7 @@ if (localStorage.jwtToken) {
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#FA5100',
+      main: '#F1592A',
     },
     secondary: red,
   },

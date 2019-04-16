@@ -2,6 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
+import chatting from './../../assets/chatting.svg'
 
 
 const JoinSection = (props) => {
@@ -11,6 +12,7 @@ const JoinSection = (props) => {
         <div className={classes.container}>
             <h2 className={classes.header}>Welcome to Supreme Vibez Radio!</h2>
             <p className={classes.subheader}>The top online radio station for reggae and other playlists. <br/> We are all about positive vibez and conscious music. </p>
+            <img className={classes.img} src={chatting} alt=""/>
             <h3 className={classes.secondaryHeader}>Join the community and chat while listening!</h3>
             <div className={classes.btnContainer}>
                 <Link to="/register" className={classes.btn}>
@@ -27,8 +29,12 @@ const JoinSection = (props) => {
 
 const styles = {
     container: {
-        minHeight: '500px',
-        padding: '50px'
+        minHeight: '400px',
+        padding: '50px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-evenly',
+        alignItems: 'center'
     },
     header: {
         textAlign: 'center',
@@ -38,7 +44,7 @@ const styles = {
     },
     secondaryHeader: {
         textAlign: 'center',
-        margin: '40px',
+        marginTop: '80px',
         color: '#FA5100',
         fontSize: '1.2em'
     },
@@ -52,7 +58,8 @@ const styles = {
         display: "flex",
         flexWrap: 'wrap',
         justifyContent: 'space-evenly',
-        marginTop: '70px',
+        marginTop: '30px',
+        marginBottom: '10px'
     },
     btn: {
         height: '30px',
@@ -60,6 +67,7 @@ const styles = {
         borderRadius: "3px",
         letterSpacing: "1.5px",
         padding: '9px 30px',
+        margin: '20px',
         textDecoration: 'none',
         color: 'white',
         transition: '0.4s',
@@ -67,6 +75,11 @@ const styles = {
             boxShadow: ' 3px 6px 15px -5px rgba(148,148,148,1)',
         },
 
+    },
+    img: {
+        width: '100%',
+        maxWidth: '300px',
+        margin: '30px'
     }
 }
 
