@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroImg from '../../assets/hero-2.jpg';
 import Grid from '@material-ui/core/Grid';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
 

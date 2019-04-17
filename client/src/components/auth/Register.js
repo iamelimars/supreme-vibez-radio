@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
+import TextField from '@material-ui/core/TextField';
+import BackgroundImg from './../../assets/trianglify2.svg';
+import { withTheme } from '@material-ui/core';
 
 class Register extends Component {
     constructor() {
@@ -58,112 +61,154 @@ class Register extends Component {
         const {errors} = this.state;
 
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col s8 offset-s2">
-                        <Link to="/" className="btn-flat waves-effect">
-                            <i className="material-icons left">
-                                keyboard_backspace
-                            </i>                
-                            Back to home        
-                        </Link>
+            <div style={styles.container} >
+                <div style={styles.leftContainer}>
+                    <h1>Welcome!</h1>
+                    <h3>Enter your personal data to start your journey with us.</h3>
+                    <div style={{paddingLeft: '11.250px'}}>
+                        <p className="grey-text text-darken-1">
+                            Already have an account?
+                            <Link to="/login">Log in</Link>
+                        </p>
+                    </div>
+                    <Link to="/" style={styles.homeButton}>            
+                        Back to home        
+                    </Link>
+                </div>
+                <div style={styles.rightContainer}>
                         <div className="col s12" style={{paddingLeft: '11.250px'}}>
-                            <h4>
+                            <h4 style={styles.registerHeader}>
                                 <b>Register</b> below
                             </h4>
-                            <p className="grey-text text-darken-1">
-                                Already have an account?
-                                <Link to="/login">Log in</Link>
-                            </p>
                         </div>
-                        <form noValidate onSubmit={this.onSubmit}>
-                            <div className="input-field col s12">
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.name}
-                                    error={errors.name}
-                                    id="name" 
-                                    type="text"
-                                    className={classnames("", {
-                                        invalid: errors.name
-                                      })}/>
-                                <label htmlFor="name">Name</label>
-                                <span className="red-text">{errors.name}</span>
-                            </div>
-                            <div className="input-field col s12">
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.username}
-                                    error={errors.username}
-                                    id="username" 
-                                    type="text"
-                                    className={classnames("", {
-                                        invalid: errors.username
-                                      })}/>
-                                <label htmlFor="username">Username</label>
-                                <span className="red-text">{errors.username}</span>
-                            </div>
-                            <div className="input-field col s12">
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.email}
-                                    error={errors.email}
-                                    id="email" 
-                                    type="text"
-                                    className={classnames("", {
-                                        invalid: errors.email
-                                      })}/>
-                                <label htmlFor="email">Email</label>
-                                <span className="red-text">{errors.email}</span>
-                            </div>
-                            <div className="input-field col s12">
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.password}
-                                    error={errors.password}
-                                    id="password" 
-                                    type="text"
-                                    className={classnames("", {
-                                        invalid: errors.password
-                                      })}/>
-                                <label htmlFor="password">Password</label>
-                                <span className="red-text">{errors.password}</span>
-                            </div>
-                            <div className="input-field col s12">
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.password2}
-                                    error={errors.password2}
-                                    id="password2" 
-                                    type="text"
-                                    className={classnames("", {
-                                        invalid: errors.password2
-                                      })}/>
-                                <label htmlFor="password2">Confirm Password</label>
-                                <span className="red-text">{errors.password2}</span>
-                            </div>
-                            <div className="col s12" style={{paddingLeft: '11.250px'}}>
-                                <button
-                                    style={{
-                                        width: '150px',
-                                        borderRadius: '3px',
-                                        letterSpacing: '1.5px',
-                                        marginTop: '1rem'
-                                    }} 
-                                    type="submit"
-                                    className="btn btn-large waves-effect waves-light hoverable blue accent-3">
-                                    Sign up
-                                </button>
-                            </div>
-
+                        <form style={styles.form} noValidate onSubmit={this.onSubmit}>
+                            <TextField
+                                label="Name"
+                                value={this.state.name}
+                                error={errors.name}
+                                id="name" 
+                                onChange={this.onChange}
+                                margin="normal"
+                                fullWidth
+                                color="#fff"
+                            />
+                            <TextField
+                                label="Username"
+                                value={this.state.username}
+                                error={errors.username}
+                                id="username" 
+                                onChange={this.onChange}
+                                margin="normal"
+                                fullWidth
+                            />
+                            <TextField
+                                label="Email"
+                                value={this.state.email}
+                                error={errors.email}
+                                id="email" 
+                                onChange={this.onChange}
+                                margin="normal"
+                                fullWidth
+                            />
+                            <TextField
+                                label="Password"
+                                value={this.state.password}
+                                error={errors.password}
+                                id="password" 
+                                type="password"
+                                onChange={this.onChange}
+                                margin="normal"
+                                fullWidth
+                            />
+                            <TextField
+                                label="Confirm Password"
+                                value={this.state.password2}
+                                error={errors.password2}
+                                id="password2" 
+                                type="password"
+                                onChange={this.onChange}
+                                margin="normal"
+                                fullWidth
+                                InputProps={{
+                                    style: {
+                                        color: "red"
+                                    }
+                                }} 
+                            />
+                            <button
+                                style={styles.submitButton} 
+                                type="submit">
+                                SIGN UP
+                            </button>
                         </form>
-                    </div>
                 </div>
             </div>
         )
     }
 }
 
+const styles = {
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        height: '100vh',
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        bottom: '0',
+        right: '0',
+        zIndex: '10'
+    },
+    leftContainer: {
+        width: '40%',
+        minWidth: '300px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundImage: `url("${BackgroundImg}")`,
+        color: 'white'
+    },
+    rightContainer: {
+        width: '60%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        justifyContent: 'center',
+    },
+    form: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: '60%',
+    },
+    homeButton: {
+        backgroundColor: 'white',
+        // border: '2px solid white',
+        padding: '15px 20px',
+        borderRadius: '30px',
+        textDecoration: 'none',
+        color: '#FA5100',
+        // color: 'white',
+        fontWeight: '500'
+    },
+    submitButton: {
+        backgroundColor: '#FA5100',
+        padding: '15px 40px',
+        borderRadius: '30px',
+        border: 'none',
+        textDecoration: 'none',
+        color: 'white',
+        fontWeight: '500',
+        marginTop: '20px',
+        cursor: 'pointer'
+    },
+    registerHeader: {
+        fontSize: '2rem',
+        color: '#FA5100'
+    }
+}
 Register.propTypes = {
     registerUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,

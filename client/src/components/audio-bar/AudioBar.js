@@ -33,6 +33,7 @@ const styles = theme => ({
     appBar: {
         top: 'auto',
         bottom: 0,
+        zIndex: 9
     },
     toolbar: {
         alignItems: 'center',
