@@ -1,0 +1,18 @@
+.leftContainer {
+    width: 40%;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+.rightContainer {
+    width: 60%;
+    padding-bottom: 60px;
+}
+
+@media only screen and (max-width: 800px) {
+    .leftContainer {
+        width: 100% !important;
+    }
+    .rightContainer {
+        width: 100% !important;
+    }
+}

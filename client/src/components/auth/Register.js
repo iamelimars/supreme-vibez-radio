@@ -3,10 +3,9 @@ import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { registerUser } from "../../actions/authActions";
-import classnames from "classnames";
 import TextField from '@material-ui/core/TextField';
 import BackgroundImg from './../../assets/trianglify2.svg';
-import { withTheme } from '@material-ui/core';
+import './Register.css';
 
 class Register extends Component {
     constructor() {
@@ -62,9 +61,9 @@ class Register extends Component {
 
         return (
             <div style={styles.container} >
-                <div style={styles.leftContainer}>
+                <div style={styles.leftContainer} className="leftContainer">
                     <h1>Welcome!</h1>
-                    <h3>Enter your personal data to start your journey with us.</h3>
+                    <h3 style={{padding: '30px'}}>Enter your personal data to start your journey with us.</h3>
                     <div style={{paddingLeft: '11.250px'}}>
                         <p className="grey-text text-darken-1">
                             Already have an account?
@@ -75,7 +74,7 @@ class Register extends Component {
                         Back to home        
                     </Link>
                 </div>
-                <div style={styles.rightContainer}>
+                <div style={styles.rightContainer} className="rightContainer">
                         <div className="col s12" style={{paddingLeft: '11.250px'}}>
                             <h4 style={styles.registerHeader}>
                                 <b>Register</b> below
@@ -160,7 +159,7 @@ const styles = {
         zIndex: '10'
     },
     leftContainer: {
-        width: '40%',
+        // width: '40%',
         minWidth: '300px',
         display: 'flex',
         flexDirection: 'column',
@@ -170,7 +169,7 @@ const styles = {
         color: 'white'
     },
     rightContainer: {
-        width: '60%',
+        // width: '60%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
