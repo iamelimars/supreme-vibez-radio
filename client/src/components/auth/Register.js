@@ -57,7 +57,7 @@ class Register extends Component {
     }
 
     render() {
-        const {errors} = this.state;
+        const { errors } = this.state;
 
         return (
             <div style={styles.container} >
@@ -66,8 +66,8 @@ class Register extends Component {
                     <h3 style={{padding: '30px'}}>Enter your personal data to start your journey with us.</h3>
                     <div style={{paddingLeft: '11.250px'}}>
                         <p className="grey-text text-darken-1">
-                            Already have an account?
-                            <Link to="/login">Log in</Link>
+                            Already have an account? 
+                            <Link style={styles.link} to="/login"> Log in</Link>
                         </p>
                     </div>
                     <Link to="/" style={styles.homeButton}>            
@@ -77,7 +77,7 @@ class Register extends Component {
                 <div style={styles.rightContainer} className="rightContainer">
                         <div className="col s12" style={{paddingLeft: '11.250px'}}>
                             <h4 style={styles.registerHeader}>
-                                <b>Register</b> below
+                                <b>Create</b> Account
                             </h4>
                         </div>
                         <form style={styles.form} noValidate onSubmit={this.onSubmit}>
@@ -159,7 +159,7 @@ const styles = {
         zIndex: '10'
     },
     leftContainer: {
-        // width: '40%',
+        width: '50%',
         minWidth: '300px',
         display: 'flex',
         flexDirection: 'column',
@@ -169,7 +169,7 @@ const styles = {
         color: 'white'
     },
     rightContainer: {
-        // width: '60%',
+        width: '50%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -206,8 +206,13 @@ const styles = {
     registerHeader: {
         fontSize: '2rem',
         color: '#FA5100'
+    },
+    link: {
+        color: '#403d3d',
+        textDecoration: 'none'
     }
 }
+
 Register.propTypes = {
     registerUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
