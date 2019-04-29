@@ -79,7 +79,8 @@ class AudioBar extends Component {
             seeking: 0,
         }
 
-        this.url = "http://185.105.4.53:8998/;stream.mp3"
+        this.url = "http://162.244.80.52:8704/stream"
+        // this.url = "http://cast1.servcast.net:2199/tunein/supremevibez.pls"
 
         this.audio = new Audio(this.url)
     }

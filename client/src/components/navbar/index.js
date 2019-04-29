@@ -64,7 +64,7 @@ class NavBar extends Component {
 
         return (
             <div className={classes.root}>
-                <AppBar color="inherit" position="static">
+                <AppBar style={{boxShadow: 'none'}} color="inherit" position="static">
                     <Toolbar>
                         <Link component={RouterLink} to="/">
                             <img className={classes.logo} src={Logo} alt={Logo}/>

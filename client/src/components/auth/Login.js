@@ -6,7 +6,6 @@ import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 import TextField from '@material-ui/core/TextField';
 import FormHelperText from '@material-ui/core/FormHelperText';
-// import BackgroundImg from './../../assets/trianglify2.svg';
 import BackgroundImg from './../../assets/trianglify2.svg';
 
 
