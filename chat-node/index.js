@@ -15,7 +15,7 @@ polka({ server }).use(files).listen(PORT, err => {
 });
 
 //Connect to mongo
-mongo.connect('mongodb://localhost:27017', { useNewUrlParser: true }, (err, clientDb) => {
+mongo.connect('mongodb://mongo:27017', { useNewUrlParser: true }, (err, clientDb) => {
 	if (err) {
 		throw err;
 	}

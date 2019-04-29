@@ -4,8 +4,8 @@ import './App.css';
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { orange, red } from '@material-ui/core/colors';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
+// import { orange, red } from '@material-ui/core/colors';
 
 import { Provider } from 'react-redux';
 import store from './store'
@@ -52,7 +52,9 @@ const theme = createMuiTheme({
     primary: {
       main: '#F1592A',
     },
-    secondary: red,
+    secondary: {
+      main: '#ff0000'
+    },
   },
 });
 

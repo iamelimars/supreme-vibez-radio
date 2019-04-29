@@ -1,0 +1,68 @@
+version: "3"
+
+services:
+    client:
+      build: ./client
+      restart: always
+      ports:
+        - 3000:3000
+      volumes:
+        - ./client:/client
+        - /client/node_modules
+    backend:
+      container_name: express-mongo
+      build: ./backend
+      restart: always
+      ports:
+        - 5000:5000
+      volumes:
+        - ./backend:/backend
+        - /backend/node_modules
+      links:
+      - mongo
+    chat:
+      build: ./chat-node
+      container_name: chat-service
+      restart: always
+      ports:
+        - 4000:4000
+      volumes:
+        - ./chat-node:/chat-node
+        - /chat-node/node_modules
+      links:
+        - mongo
+    mongo:
+      container_name: mongo
+      image: mongo
+      ports:
+        - "27017:27017"
+
+    #     image: mhart/alpine-node:8.11.4
+    #     restart: always
+    #     ports:
+    #         - "5000:5000"
+    #     volumes:
+    #         - ./backend:/backend
+    #         - /backend/node_modules
+    #     # depends_on:
+    #     #     - mongodb
+    #     networks:
+    #         - webappnetwork
+    
+    #     image: mhart/alpine-node:8.11.4
+    #     restart: always
+    #     ports:
+    #       - "4000:4000"
+    #     volumes:
+    #       - ./chat-node:/chat-node
+    #       - /chat-node/node_modules
+    #     # depends_on:
+    #     #   - mongodb
+    #     networks:
+    #         - webappnetwork
+    # mongodb:
+    #     image: mongo
+    #     restart: always
+    #     container_name: mongodb
+    #     ports:
+    #         - 27017:27017

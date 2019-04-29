@@ -14,7 +14,7 @@ class Chat extends Component {
                 {
                     id:0,
                     username: 'Admin',
-                    message: 'Welcome'
+                    message: 'Welcome to Supreme Vibez!'
                 }
             ],
             totalUsers: [
@@ -27,26 +27,37 @@ class Chat extends Component {
             currentMessage: ""
         }
 
-        this.socket = io('localhost:4000')
+        this.socket = io('http://localhost:4000')
 
         this.socket.emit('add user', this.props.username);
 
         this.socket.on('login', data => {
             this.setState({ messages: [...this.state.messages, ...data.res] }, () => {
-                console.log(this.state.messages);
+                // console.log(this.state.messages);
                 
             })
         })
+        this.socket.on('output', data => {
 
-        this.socket.on('new message', data => {
-            const message = new Message({
-                id: data.username,
-                message: data.message,
-                senderName: data.username,
-                username: data.username
-            })
+        // this.socket.on('new message', data => {
+            
+            console.log(this.props.username, data.username);
+            if (data.username === this.props.username) {
+                console.log(this.props.username, data.username);
 
-            this.setState({ messages: [...this.state.messages, message] })
+            } else {
+                const message = new Message({
+                    id: data.username,
+                    message: data.message,
+                    senderName: data.username,
+                    username: data.username
+                })
+                this.setState({ messages: [...this.state.messages, message] })
+            }
+            
+            
+
+            
         })
 
         this.socket.on('user joined', data => {
@@ -66,7 +77,14 @@ class Chat extends Component {
             username: this.props.username
         })
 
-        this.socket.emit('new message', this.state.currentMessage)
+        const sendingMessage = {
+            username: this.props.username,
+            message: this.state.currentMessage
+        }
+        
+        this.socket.emit('new message', sendingMessage)
+
+        // this.socket.emit('new message', this.state.currentMessage)
         this.setState({ messages: [...this.state.messages, message], currentMessage: "" })
     }
 
@@ -97,7 +115,7 @@ class Chat extends Component {
                         chatbubble: {
                             borderRadius: 30,
                             padding: 12,
-                            backgroundColor: '#FA5100'
+                            // backgroundColor: '#FA5100'
                         }
                     }
                     }

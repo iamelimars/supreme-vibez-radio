@@ -2,7 +2,7 @@ const mongo = require('mongodb').MongoClient;
 const client = require('socket.io').listen(4000).sockets;
 
 //Connect to mongo
-mongo.connect('mongodb://localhost:27017',{ useNewUrlParser: true }, (err, clientDb) => {
+mongo.connect('mongodb://mongo:27017',{ useNewUrlParser: true }, (err, clientDb) => {
 	if (err) {
 		throw err;
 	}
@@ -34,12 +34,19 @@ mongo.connect('mongodb://localhost:27017',{ useNewUrlParser: true }, (err, clien
             let username = data.username;
             let message = data.message;
 
+            console.log(username);
+            
+            console.log(message);
+            
+
             //Checkc for username and message
             if (username === "" || message === "") {
-                sendStatus('Please eneter a name and message');
+                sendStatus('Please enter a name and message');
             } else {
                 chat.insert({username: username, message: message}, () => {
-                    client.emit('output', [data]);
+                    // chat.insert({username: 'username', message: 'message'}, () => {
+
+                    client.emit('output', data);
 
                     //Send status object
                     sendStatus({

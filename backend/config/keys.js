@@ -1,4 +1,5 @@
 module.exports = {
-  mongoURI: "mongodb://localhost:27017/radio-auth",
+  mongoURI: "mongodb://mongo:27017/radio-auth",
+  // mongoURI: 'mongodb://localhost/radio-auth',
   secretOrKey: "secret"
 }
