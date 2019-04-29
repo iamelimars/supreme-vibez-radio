@@ -79,7 +79,7 @@ class Chat extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{marginBottom: '64px', padding: '0 20px'}}>
                 <ChatFeed
                     style={{
                         overflow: 'scroll',
@@ -95,8 +95,9 @@ class Chat extends Component {
                         fontSize: 15
                         },
                         chatbubble: {
-                        borderRadius: 30,
-                        padding: 12
+                            borderRadius: 30,
+                            padding: 12,
+                            backgroundColor: '#FA5100'
                         }
                     }
                     }
@@ -108,7 +109,12 @@ class Chat extends Component {
                         onKeyDown={this.onEnterPress}
                         multiline
                         fullWidth
+                        helperText="Chat with us!"
                         rowsMax="4"
+                        variant="outlined"
+                        InputLabelProps={{
+                        shrink: true,
+                        }}
                         value={this.state.currentMessage}
                         onChange={this.messageChange}
                         placeholder="Type Something..."

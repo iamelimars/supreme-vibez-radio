@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-
+import './Dashboard.css';
 import Chat from './Chat';
+import GroupChatImg from './../../assets/group_chat.svg';
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -13,35 +14,24 @@ class Dashboard extends Component {
 render() {
     const { user } = this.props.auth;
     console.log(user);
-    
+    const name = user.name.split(" ")[0];
 return (
-      <div style={{ minHeight: "75vh" }} className="">
-        <div className="row">
-          <div className="col s8 ">
+      <div style={{ minHeight: "75vh" }} className="dash-container">
+          <div className="dash-left">
             <h4>
-              <b>Hey there,</b> {user.name.split(" ")[0]}
-              <p className="flow-text grey-text text-darken-1">
-                You are logged into a full-stack{" "}
-                <span style={{ fontFamily: "monospace" }}>MERN</span> app 👏
-              </p>
+              Hey there, <b>{name}</b>
             </h4>
-            <button
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem"
-              }}
-              onClick={this.onLogoutClick}
-              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-            >
-              Logout
+            <p>
+              You are logged into Supreme Vibez Radio. <br/> You are currently in the dashboard, <br/> where you can chat with other the Djs and other users.
+            </p>
+            <button onClick={this.onLogoutClick}>
+              LOGOUT
             </button>
+            <img src={GroupChatImg} alt="" className="chat-img"/>
           </div>
-          <div className="col s4">
-            <Chat username={user.username}/>
+          <div className="dash-right">
+            <Chat name={name} username={user.username}/>
           </div>
-        </div>
       </div>
     );
   }

@@ -44,6 +44,12 @@ class NavBar extends Component {
         anchorEl: null,
     };
 
+    onLogoutClick = e => {
+        e.preventDefault();
+        this.props.logoutUser();
+        this.setState({ anchorEl: null });
+    };
+
     handleChange = event => { 
         this.setState({ auth: event.target.checked });
     };
@@ -94,8 +100,21 @@ class NavBar extends Component {
                                     open={open}
                                     onClose={this.handleClose}
                                 >
-                                    <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                                    <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                                    <MenuItem onClick={this.handleClose}>
+                                        <Link component={RouterLink} to="/">
+                                            Home
+                                        </Link>
+                                    </MenuItem>
+                                    <MenuItem onClick={this.handleClose}>
+                                        <Link component={RouterLink} to="/dashboard">
+                                            Dashboard
+                                        </Link>
+                                    </MenuItem>
+                                    <MenuItem onClick={this.onLogoutClick}>
+                                        <Link component={RouterLink} to="/login">
+                                            Logout
+                                        </Link>
+                                    </MenuItem>
                                 </Menu>
                             </div>
                         )
@@ -108,9 +127,9 @@ class NavBar extends Component {
                                     <Link className={classes.links} component={RouterLink} to="/login">
                                         Login
                                     </Link>
-                                    <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                                    {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
                                         <MenuIcon />
-                                    </IconButton>
+                                    </IconButton> */}
                                 </div>
                             )}
                     </Toolbar>
