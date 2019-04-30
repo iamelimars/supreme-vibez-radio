@@ -11,7 +11,7 @@ import {
 //Register user
 export const registerUser = (userData, history) => dispatch => {
     axios
-        .post('http://localhost:5001/api/users/register', userData)
+        .post('http://192.241.133.63:5001/api/users/register', userData)
         .then(res => history.push('/login')) //re-direct to login pae on successful register
         .catch(err => 
                 dispatch({
@@ -24,7 +24,7 @@ export const registerUser = (userData, history) => dispatch => {
 //Login - get user token
 export const loginUser = userData => dispatch => {
     axios
-        .post("http://localhost:5001/api/users/login", userData)
+        .post("http://192.241.133.63:5001/api/users/login", userData)
         .then(res => {
             //save to local storage
 
