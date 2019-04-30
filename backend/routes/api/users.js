@@ -11,8 +11,8 @@ const hbs = require('nodemailer-express-handlebars');
 
 
 
-const email = process.env.MAILER_EMAIL_ID || 'emarshall3235@gmail.com';
-const pass = process.env.MAILER_PASSWORD || 'cca#3235';
+const email = process.env.MAILER_EMAIL_ID || 'supremevibezradio@gmail.com';
+const pass = process.env.MAILER_PASSWORD || 'radio247';
 
 const smtpTransport = nodemailer.createTransport({
   service: process.env.MAILER_SERVICE_PROVIDER || 'Gmail',

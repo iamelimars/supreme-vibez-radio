@@ -41,11 +41,7 @@ class Chat extends Component {
 
         // this.socket.on('new message', data => {
             
-            console.log(this.props.username, data.username);
-            if (data.username === this.props.username) {
-                console.log(this.props.username, data.username);
-
-            } else {
+            if (data.username !== this.props.username) {
                 const message = new Message({
                     id: data.username,
                     message: data.message,
@@ -53,7 +49,7 @@ class Chat extends Component {
                     username: data.username
                 })
                 this.setState({ messages: [...this.state.messages, message] })
-            }
+            } 
             
             
 

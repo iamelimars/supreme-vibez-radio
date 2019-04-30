@@ -46,7 +46,9 @@ class ForgotPassword extends Component {
                 <div className="row">
                     <div className="col s8 offset-s2" style={styles.container}>
                         {errors.response && 
-                            <p className="red-text">Something went wrong... {errors.response.data.message}.</p>
+                            <p className="red-text">Something went wrong... 
+                            {/* {errors.response.data.message}. */}
+                            </p>
                         }
                             {forgotPass.response.status === 200 ?
                                 <div className="leftContainer" style={styles.leftContainer}>
