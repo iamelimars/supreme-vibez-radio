@@ -27,7 +27,8 @@ class Chat extends Component {
             currentMessage: ""
         }
 
-        this.socket = io('http://localhost:4000')
+        this.socket = io('http://chat:4000')
+        // this.socket = io('http://localhost:4000')
 
         this.socket.emit('add user', this.props.username);
 

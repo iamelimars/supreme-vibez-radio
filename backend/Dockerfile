@@ -12,7 +12,7 @@ RUN npm install
 # COPY . /backend/
 COPY . .
 # Make port 5000 available to the world outside this container
-EXPOSE 5000
+EXPOSE 5001
 
 RUN npm install -g nodemon 
 #// install nodemon for changes on the fly
