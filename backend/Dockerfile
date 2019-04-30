@@ -18,5 +18,5 @@ RUN npm install -g nodemon
 #// install nodemon for changes on the fly
 # Run the app when the container launches
 # CMD ["npm", "start"]
-CMD [ "nodemon", "index.js" ] 
+CMD [ "nodemon", "server.js" ] 
 #// start server inside container
