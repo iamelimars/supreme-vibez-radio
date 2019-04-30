@@ -38,12 +38,12 @@ class ResetPassword extends Component {
             verifyPassword: verifyPassword
         }
         this.props.resetPassword(data, this.props.history)
-        console.log(data);
+        // console.log(data);
         
     }
 
     componentDidUpdate() {
-        console.log(this.props);
+        // console.log(this.props);
         
     }
     

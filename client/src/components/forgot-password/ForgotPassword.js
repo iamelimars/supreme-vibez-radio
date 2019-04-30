@@ -30,8 +30,8 @@ class ForgotPassword extends Component {
         }
 
         this.props.forgotPassword(forgotEmail, this.props.history)
-        console.log(forgotEmail);
-        console.log(this.props);
+        // console.log(forgotEmail);
+        // console.log(this.props);
         
 
     }

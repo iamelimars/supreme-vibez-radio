@@ -13,7 +13,7 @@ class Dashboard extends Component {
   };
 render() {
     const { user } = this.props.auth;
-    console.log(user);
+    // console.log(user);
     const name = user.name.split(" ")[0];
 return (
       <div style={{ minHeight: "75vh" }} className="dash-container">

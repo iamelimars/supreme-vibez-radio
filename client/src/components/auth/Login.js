@@ -52,7 +52,7 @@ class Login extends Component {
 
         this.props.loginUser(userData); //since we handle the redirect within our commponent, we dont need to pass in the props.history as a paramater
 
-        console.log(userData);
+        // console.log(userData);
     };
 
 
