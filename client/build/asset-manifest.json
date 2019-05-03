@@ -1,0 +1,22 @@
+{
+  "main.css": "/static/css/main.aaece62d.chunk.css",
+  "main.js": "/static/js/main.1a6244d7.chunk.js",
+  "main.js.map": "/static/js/main.1a6244d7.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.fdfcfda2.js",
+  "runtime~main.js.map": "/static/js/runtime~main.fdfcfda2.js.map",
+  "static/js/2.dc82cf8b.chunk.js": "/static/js/2.dc82cf8b.chunk.js",
+  "static/js/2.dc82cf8b.chunk.js.map": "/static/js/2.dc82cf8b.chunk.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.89f962e3e8e7ceb3999636afeef6348c.js": "/precache-manifest.89f962e3e8e7ceb3999636afeef6348c.js",
+  "service-worker.js": "/service-worker.js",
+  "static/css/main.aaece62d.chunk.css.map": "/static/css/main.aaece62d.chunk.css.map",
+  "static/media/android.svg": "/static/media/android.78b5b5a6.svg",
+  "static/media/apple.svg": "/static/media/apple.0f3514a4.svg",
+  "static/media/authentication.svg": "/static/media/authentication.5567b068.svg",
+  "static/media/chatting.svg": "/static/media/chatting.b525a31a.svg",
+  "static/media/google-play-badge.png": "/static/media/google-play-badge.db9b21a1.png",
+  "static/media/group_chat.svg": "/static/media/group_chat.3977b36f.svg",
+  "static/media/hero-2.jpg": "/static/media/hero-2.bb753a4b.jpg",
+  "static/media/logo.png": "/static/media/logo.94232f96.png",
+  "static/media/trianglify2.svg": "/static/media/trianglify2.2fe82231.svg"
+}

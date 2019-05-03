@@ -30,6 +30,11 @@
 # WORKDIR /app
 # COPY --from=builder /app/build .
 # CMD ["serve", "-p", "80", "-s", "."]
+# FROM mhart/alpine-node:11
+# WORKDIR /app
+# COPY . .
+# RUN npm install
+# RUN npm run build
 
 FROM nginx:1.15.2-alpine
 COPY ./build /var/www
