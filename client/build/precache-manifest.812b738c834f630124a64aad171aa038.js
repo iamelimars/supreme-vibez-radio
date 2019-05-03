@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/chatting.b525a31a.svg"
   },
   {
-    "revision": "1a6244d73740da3f93d4",
+    "revision": "0da0f79108dfd2383e15",
     "url": "/static/css/main.aaece62d.chunk.css"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/static/media/logo.94232f96.png"
   },
   {
-    "revision": "1a6244d73740da3f93d4",
-    "url": "/static/js/main.1a6244d7.chunk.js"
+    "revision": "0da0f79108dfd2383e15",
+    "url": "/static/js/main.0da0f791.chunk.js"
   },
   {
     "revision": "bb753a4bc4e211b6081fad9c22a419d9",
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/static/media/group_chat.3977b36f.svg"
   },
   {
-    "revision": "e4b63a90dd35d3797b143b1a5838fec2",
+    "revision": "4ca0d2c96e445b8711ad50198e22b469",
     "url": "/index.html"
   }
 ];
