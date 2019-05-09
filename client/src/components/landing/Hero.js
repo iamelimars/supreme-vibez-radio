@@ -1,8 +1,9 @@
 import React from 'react';
-import HeroImg from '../../assets/hero-2.jpg';
+import HeroImg from '../../assets/hero-3.jpg';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import HeroBck from '../../assets/mic.jpg'
 
 
 const styles = {
