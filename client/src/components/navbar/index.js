@@ -34,7 +34,7 @@ const styles = {
         textDecoration: 'none'
     },
     logo: {
-        height: '100px',
+        height: '200px',
     },
 };
 
