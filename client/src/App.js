@@ -5,7 +5,7 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { orange, red } from '@material-ui/core/colors';
+import { red } from '@material-ui/core/colors';
 
 import { Provider } from 'react-redux';
 import store from './store'

@@ -1,6 +1,5 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
 import chatting from './../../assets/chatting.svg'
 
@@ -63,11 +62,10 @@ const styles = {
         marginBottom: '10px'
     },
     btn: {
-        height: '30px',
         background: '#FA5100',
         borderRadius: "3px",
         letterSpacing: "1.5px",
-        padding: '9px 30px',
+        padding: '20px 30px',
         margin: '20px',
         textDecoration: 'none',
         color: 'white',

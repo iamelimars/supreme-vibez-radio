@@ -3,7 +3,6 @@ import HeroImg from '../../assets/hero-3.jpg';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import HeroBck from '../../assets/mic.jpg'
 
 
 const styles = {
@@ -15,9 +14,6 @@ const styles = {
         backgroundPosition: 'center ',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        // '&:before': {
-
-        // }
 
     },
     heroImg: {
@@ -39,15 +35,15 @@ const Hero = (props) => {
                         justify="center"
                         direction="column"
                         style={{ height: '100%', padding: 20 }}>
-                        <Typography style={{color: 'white', fontSize: '3.5rem', fontWeight: '800'}} variant="h4" align="left">
+                        <h4 style={{margin: '0' ,color: 'white', fontSize: '3.9rem', fontWeight: '800'}} variant="h4" align="left">
                             Supreme Vibez Radio
-                        </Typography>
-                        <Typography style={{color: 'orange', fontSize: '1.4rem', fontWeight: '700'}} variant="h6" align="left">
+                        </h4>
+                        <h6 style={{margin: '10px 0', color: 'orange', fontSize: '1.6rem', fontWeight: '700'}} variant="h6" align="left">
                             24/7 Online Radio
-                        </Typography>
-                        <Typography style={{color: 'white', fontSize: '1rem', fontWeight: '700'}} variant="p" align="left">
+                        </h6>
+                        <p style={{margin: '0', color: 'white', fontSize: '1.2rem', fontWeight: '700'}} variant="p" align="left">
                             Radio with no exceptions
-                        </Typography>
+                        </p>
                     </Grid>
                 </Grid>
             </Grid>

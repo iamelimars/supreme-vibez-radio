@@ -2,16 +2,9 @@ import React, { Component } from 'react';
 import JoinSection from './JoinSection';
 import Hero from './Hero';
 import SocialSection from './SocialSection';
-import io from 'socket.io-client';
-
+import Footer from './Footer';
 
 class Landing extends Component {
-    
-    constructor(props) {
-        super(props);
-
-    
-    }
 
     render() {
         return (
@@ -23,7 +16,8 @@ class Landing extends Component {
                         <Hero />
                         <JoinSection />
                         <SocialSection />
-                        <br/>
+                        <Footer />
+                        {/* <br/> */}
                     </div>
                 </div>
             </div>
