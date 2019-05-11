@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => (
     <div style={styles.container}>
         <h6 style={styles.text}>Copyright © 2019 Supreme Vibez Radio & Entertainment. All Rights Reserved.</h6>
-        <Link style={styles.link} to="/terms">Terms & Conditions</Link>
+        {/* <Link style={styles.link} to="/terms">Terms & Conditions</Link> */}
     </div>
 )
 

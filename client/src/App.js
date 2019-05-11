@@ -21,6 +21,7 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import ForgotPassword from './components/forgot-password/ForgotPassword';
 import ResetPassword from './components/reset-password/ResetPassword';
+import ScrollToTop from './components/scroll-to-top/ScrollToTop'
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -62,17 +63,19 @@ class App extends Component {
         <MuiThemeProvider theme={theme}>
           <Router>
             <div className="App">
-              <Navbar />
-              <Route exact path="/" component={Landing} />
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/forgot_password" component={ForgotPassword} />
-              <Route exact path="/reset_password" component={ResetPassword} />
-              <Route exact path="/terms" component={Terms} />
-              <Switch>
-                <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              </Switch>
-              <AudioBar />
+              <ScrollToTop>
+                <Navbar />
+                <Route exact path="/" component={Landing} />
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/forgot_password" component={ForgotPassword} />
+                <Route exact path="/reset_password" component={ResetPassword} />
+                <Route exact path="/terms" component={Terms} />
+                <Switch>
+                  <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                </Switch>
+                <AudioBar />
+              </ScrollToTop>
             </div>
           </Router>
         </MuiThemeProvider>
