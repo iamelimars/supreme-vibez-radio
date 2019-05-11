@@ -13,9 +13,8 @@ import store from './store'
 // import Navbar from './components/layout/Navbar';
 import Navbar from './components/navbar';
 import Landing from './components/landing';
-
 import AudioBar from './components/audio-bar/AudioBar';
-// import Landing from './components/layout/Landing';
+import Terms from './components/terms/Terms'
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import PrivateRoute from "./components/private-route/PrivateRoute";
@@ -69,6 +68,7 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/forgot_password" component={ForgotPassword} />
               <Route exact path="/reset_password" component={ResetPassword} />
+              <Route exact path="/terms" component={Terms} />
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
               </Switch>
