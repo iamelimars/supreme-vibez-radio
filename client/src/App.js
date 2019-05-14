@@ -19,6 +19,7 @@ import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import About from './components/about/About'
 import ForgotPassword from './components/forgot-password/ForgotPassword';
 import ResetPassword from './components/reset-password/ResetPassword';
 import ScrollToTop from './components/scroll-to-top/ScrollToTop'
@@ -71,6 +72,7 @@ class App extends Component {
                 <Route exact path="/forgot_password" component={ForgotPassword} />
                 <Route exact path="/reset_password" component={ResetPassword} />
                 <Route exact path="/terms" component={Terms} />
+                <Route exact path="/about" component={About} />
                 <Switch>
                   <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 </Switch>

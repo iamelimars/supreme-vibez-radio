@@ -119,6 +119,9 @@ class NavBar extends Component {
                             :
                             (
                                 <div>
+                                    <Link className={classes.links} component={RouterLink} to="/about">
+                                        About us
+                                    </Link>
                                     <Link className={classes.links} component={RouterLink} to="/register">
                                         Register
                                     </Link>

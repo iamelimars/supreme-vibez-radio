@@ -9,7 +9,7 @@ import {
 export const resetPassword = (passwordData, history) => dispatch => {
     dispatch(resetPasswordRequest())
     axios
-        .post('/api/users/reset_password', passwordData)
+        .post('http://142.93.122.156:5001/api/users/reset_password', passwordData)
         .then(res => {
             dispatch(resetPasswordSuccess(res))
         })

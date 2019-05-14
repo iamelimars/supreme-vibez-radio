@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "client",
+  "alias": ["www.supremevibezradio.com"],
   "public": false,
   "builds": [
     {

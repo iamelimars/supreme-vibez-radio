@@ -17,7 +17,6 @@ const Terms = () => (
             <br/>
             <h3>User Content</h3>
             <p>Where our Website requires you to register, you must provide accurate and complete information. It is your responsibility to ensure that such information is up to date, and we accept no liability in the case of out-of-date information. You must not divulge your password to anyone. Each registration is for one user only. If you have reason to believe that the security of your account has been affected, please contact us immediately. We reserve the right to contact you by email, as provided at the time of registration, regarding your use of any forums and other interactive areas of the Website. </p>
-            <p>We have no control over the information and material posted by users on our Community Pages, but we reserve the right to edit, move and remove posts as necessary to keep the Community Pages safe for other users. </p>
             <p>Users are asked not to:</p>
             <ul>
                 <li>Use posts in the forums to advertise goods or services;</li>

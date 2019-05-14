@@ -9,7 +9,7 @@ import {
 export const forgotPassword = (emailData, history) => dispatch => {
     dispatch(forgotPasswordRequest())
     axios
-        .post('/api/users/forgot_password', emailData)
+        .post('http://142.93.122.156:5001/api/users/forgot_password', emailData)
         .then(res => {
             dispatch(forgotPasswordSuccess(res))
             // history.push('/forgot_password_sent')
