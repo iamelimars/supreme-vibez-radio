@@ -53,6 +53,13 @@ const User = require("../../models/User");
 //@route POST api/users/register
 //@desc Register users
 //@access Public
+
+router.get('/test', (req, res) => {
+  console.log('get');
+  
+  res.send('Hello World')
+});
+
 router.post("/register", (req, res) => {
   //Form validation
 
