@@ -27,7 +27,8 @@ class Chat extends Component {
             currentMessage: ""
         }
 
-        this.socket = io('http://142.93.122.156:4000') 
+        // this.socket = io('http://142.93.122.156:4000') 
+        this.socket = io('https://supreme-vibez-chat.herokuapp.com/') 
 
         this.socket.emit('add user', this.props.username);
 
@@ -38,15 +39,29 @@ class Chat extends Component {
             })
         })
 
-        this.socket.on('new message', data => {
-            const message = new Message({
-                id: data.username,
-                message: data.message,
-                senderName: data.username,
-                username: data.username
-            })
+        this.socket.on('output', data => {
 
-            this.setState({ messages: [...this.state.messages, message] })
+            if (data.username !== this.props.username) {
+                const message = new Message({
+                    id: data.username,
+                    message: data.message,
+                    senderName: data.username,
+                    username: data.username
+                })
+                this.setState({ messages: [...this.state.messages, message] })
+            } 
+        // this.socket.on('new message', data => {
+            // const message = new Message({
+            //     id: data.username,
+            //     message: data.message,
+            //     senderName: data.username,
+            //     username: data.username
+            // })
+
+            // console.log(message);
+            
+
+            // this.setState({ messages: [...this.state.messages, message] })
         })
 
         this.socket.on('user joined', data => {
@@ -66,8 +81,18 @@ class Chat extends Component {
             username: this.props.username
         })
 
-        this.socket.emit('new message', this.state.currentMessage)
+        const sendingMessage = {
+            username: this.props.username,
+            message: this.state.currentMessage
+        }
+        
+        this.socket.emit('new message', sendingMessage)
+
+        // this.socket.emit('new message', this.state.currentMessage)
         this.setState({ messages: [...this.state.messages, message], currentMessage: "" })
+
+        // this.socket.emit('new message', this.state.currentMessage)
+        // this.setState({ messages: [...this.state.messages, message], currentMessage: "" })
     }
 
     onEnterPress = (e) => {

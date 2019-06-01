@@ -16,7 +16,7 @@ const styles = {
         display: 'flex',
         justifyContent: 'space-evenly',
         alignItems: 'center',
-        padding: '10px',
+        padding: '10px 0px',
         flexWrap: 'wrap'
     },
     text: {

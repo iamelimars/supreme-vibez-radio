@@ -11,7 +11,7 @@ import {
 //Register user
 export const registerUser = (userData, history) => dispatch => {
     axios
-        .post('http://142.93.122.156:5001/api/users/register', userData)
+        .post('https://supreme-vibez-backend.supremevibezradio.now.sh/api/users/register', userData)
         .then(res => history.push('/login')) //re-direct to login pae on successful register
         .catch(err => 
                 dispatch({
@@ -23,8 +23,26 @@ export const registerUser = (userData, history) => dispatch => {
 
 //Login - get user token
 export const loginUser = userData => dispatch => {
+    console.log(userData);
+
+    // fetch("http://localhost:5000/post", {
+    //     method: 'post',
+    //     body: {
+    //         email: 'test',
+    //         password: 'test'
+    //     }
+    // }).then(response => {
+    //     console.log(response);
+        
+    // })
+    
     axios
-        .post("http://142.93.122.156:5001/api/users/login", userData)
+        .post("https://supreme-vibez-backend.supremevibezradio.now.sh/api/users/login", userData)
+        // .post("http://142.93.122.156:5001/api/users/login", userData)
+        // .post("http://localhost:5000/post", {
+        //     email: 'test',
+        //     password: 'test'
+        // })
         .then(res => {
             //save to local storage
 
@@ -41,11 +59,14 @@ export const loginUser = userData => dispatch => {
             //set current user
             dispatch(setCurrentUser(decoded))
         })
-        .catch(err => 
+        .catch(err => {
+            console.log(err);
+            
                 dispatch({
                     type: GET_ERRORS,
                     payload: err.response.data
                 })
+            }
         )
 }
 

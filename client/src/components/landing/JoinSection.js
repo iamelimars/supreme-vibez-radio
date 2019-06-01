@@ -12,7 +12,7 @@ const JoinSection = (props) => {
             <h2 className={classes.header}>Welcome to Supreme Vibez Radio!</h2>
             <p className={classes.subheader}>Supreme Vibez is an online radio station that plays<br/> different genres of music that appeal to all ethnicities </p>
             {/* <p className={classes.subheader}>The top online radio station for reggae and other playlists. <br/> We are all about positive vibez and conscious music. </p> */}
-            <img className={classes.img} src={chatting} alt=""/>
+            {/* <img className={classes.img} src={chatting} alt=""/> */}
             <h3 className={classes.secondaryHeader}>Join the community and chat while listening!</h3>
             <div className={classes.btnContainer}>
                 <Link to="/register" className={classes.btn}>

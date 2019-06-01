@@ -3,6 +3,7 @@ import JoinSection from './JoinSection';
 import Hero from './Hero';
 import SocialSection from './SocialSection';
 import Footer from './Footer';
+import Events from './Events';
 
 class Landing extends Component {
 
@@ -15,6 +16,7 @@ class Landing extends Component {
                     <div className="col s12 center-align">
                         <Hero />
                         <JoinSection />
+                        <Events />
                         <SocialSection />
                         <Footer />
                         {/* <br/> */}

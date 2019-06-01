@@ -1,0 +1,22 @@
+
+.events-container {
+    padding: 40px;
+    background: rgb(236,144,100);
+    background: linear-gradient(144deg, rgba(236,144,100,1) 35%, rgba(201,237,147,1) 100%);    
+}
+.events-container > h1 {
+    text-align: center;
+    color: #fff;
+}
+.img-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.event-img {
+    width: 25%;
+    min-width: 300px;
+    padding: 20px;
+    
+}
